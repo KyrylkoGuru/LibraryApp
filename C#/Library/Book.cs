@@ -13,7 +13,7 @@ namespace Library
         public string Description { get; set; }
         public string ImagePath { get; set; }
 
-        // Пустий конструктор для десеріалізації
+
         public Book() { }
 
         public Book(string title, string author, int yearPublished, string isbn, string description, string imagePath)

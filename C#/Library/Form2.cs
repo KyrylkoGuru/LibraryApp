@@ -2,7 +2,7 @@
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using System.Drawing; // Додано для класу Image
+using System.Drawing;
 using Library;
 
 namespace Library
@@ -38,7 +38,6 @@ namespace Library
             textBox5.Text = _book.ISBN;
             textBox3.Text = _book.Description;
 
-            // Завантажити зображення книги, якщо воно існує
             if (File.Exists(_book.ImagePath))
             {
                 pictureBox1.Image = Image.FromFile(_book.ImagePath);
@@ -46,13 +45,13 @@ namespace Library
             }
             else
             {
-                pictureBox1.Image = null; // Очистити зображення, якщо файл не знайдено
+                pictureBox1.Image = null;
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide(); // Сховати форму без закриття
+            this.Hide();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -68,7 +67,6 @@ namespace Library
             _book.ISBN = textBox5.Text;
             _book.Description = textBox3.Text;
 
-            // Встановлюємо шлях до зображення, якщо воно вибране
             _book.ImagePath = _selectedImagePath ?? _book.ImagePath;
 
             // Оновити або додати книгу у Form1, якщо потрібно
@@ -85,7 +83,7 @@ namespace Library
                 }
             }
 
-            this.Close(); // Закриття Form2 після збереження
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -99,10 +97,10 @@ namespace Library
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                // Зберегти шлях до вибраного файлу
+                // Зберегти шлях
                 _selectedImagePath = openFileDialog.FileName;
 
-                // Відобразити вибране фото у PictureBox
+                // Відобразити фото
                 pictureBox1.Image = Image.FromFile(_selectedImagePath);
                 pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             }
@@ -110,7 +108,6 @@ namespace Library
 
         private void label1_Click(object sender, EventArgs e)
         {
-            // Ваш код для обробки кліку по label1
         }
     }
 }

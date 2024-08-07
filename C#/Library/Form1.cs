@@ -21,16 +21,15 @@ namespace Library
         }
         private void DisplayBooks()
         {
-            flowLayoutPanel1.Controls.Clear(); // Очистити панель перед відображенням
+            flowLayoutPanel1.Controls.Clear();
             foreach (var book in _library.GetAllBooks())
             {
-                flowLayoutPanel1.Controls.Add(CreateBookPanel(book)); // Додати панелі для всіх книг
+                flowLayoutPanel1.Controls.Add(CreateBookPanel(book));
             }
         }
 
         private void InitializeBookPanel()
         {
-            // Налаштування властивостей панелі
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.WrapContents = false; // Щоб нові книги розміщувались під наявними
             flowLayoutPanel1.AutoScroll = true;
@@ -41,7 +40,6 @@ namespace Library
             {
                 if (control is Panel panel)
                 {
-                    // Знайти PictureBox у панелі
                     var pictureBox = panel.Controls.OfType<PictureBox>().FirstOrDefault();
                     var lblTitle = panel.Controls.OfType<Label>().FirstOrDefault(l => l.Text.StartsWith("Назва:"));
                     var lblAuthor = panel.Controls.OfType<Label>().FirstOrDefault(l => l.Text.StartsWith("Автор:"));
@@ -69,8 +67,8 @@ namespace Library
 
         public void AddBookToPanel(Book book)
         {
-            _library.AddBook(book); // Додаємо книгу до бібліотеки
-            flowLayoutPanel1.Controls.Add(CreateBookPanel(book)); // Додаємо панель з інформацією про книгу
+            _library.AddBook(book);
+            flowLayoutPanel1.Controls.Add(CreateBookPanel(book));
         }
 
         private Panel CreateBookPanel(Book book)
@@ -132,23 +130,23 @@ namespace Library
             lblTitle.Location = new Point(110, 5);
             lblAuthor.Location = new Point(110, 25);
             lblYear.Location = new Point(110, 45);
-            btnDetails.Location = new Point(400, 10); // Розміщення кнопки "Подробиці" праворуч
-            btnDelete.Location = new Point(400, 55); // Розміщення кнопки "Видалити" під "Подробиці"
+            btnDetails.Location = new Point(400, 10);
+            btnDelete.Location = new Point(400, 55); 
 
             btnDetails.Click += (sender, e) =>
             {
                 Form2 detailsForm = new Form2(book); // Створення Form2 з об'єктом Book
-                detailsForm.ShowDialog(); // Відкриття Form2 як діалогового вікна
+                detailsForm.ShowDialog(); 
             };
 
             btnDelete.Click += (sender, e) =>
             {
                 if (MessageBox.Show("Ви впевнені, що хочете видалити цю книгу?", "Підтвердження видалення", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    _library.RemoveBook(book.ISBN); // Видалити книгу з бібліотеки
+                    _library.RemoveBook(book.ISBN); // Видалити з бібліотеки
                     flowLayoutPanel1.Controls.Remove(panel);
-                    panel.Dispose(); // Звільнення ресурсів панелі
-                    _library.SaveToFile(@"D:\Images\Saves\libraryData.xml"); // Зберегти зміни в файл
+                    panel.Dispose(); // Звільнення ресурсів
+                    _library.SaveToFile(@"D:\Images\Saves\libraryData.xml");
                 }
             };
 
@@ -165,7 +163,7 @@ namespace Library
             string searchText = textBox1.Text.ToLower();
             var filteredBooks = _library.SearchBooks(searchText);
 
-            flowLayoutPanel1.Controls.Clear(); // Очистка всіх поточних відображень
+            flowLayoutPanel1.Controls.Clear();
 
             foreach (var book in filteredBooks)
             {
@@ -174,7 +172,7 @@ namespace Library
 
             if (filteredBooks.Count == 0)
             {
-                label1.Show(); // Показуємо повідомлення, якщо книги не знайдено
+                label1.Show();
                 label1.Text = "Книги за запитом не знайдено";
             }
         }
@@ -189,7 +187,7 @@ namespace Library
         {
             // Відкриття Form2 без передачі книги для створення нової книги
             Form2 addBookForm = new Form2();
-            addBookForm.ShowDialog(); // Відкриття Form2 як діалогового вікна
+            addBookForm.ShowDialog(); // Відкриття Form2
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -205,7 +203,7 @@ namespace Library
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            FilterBooks(); // Виклик функції фільтрації при кожній зміні тексту
+            FilterBooks();
         }
     }
 
