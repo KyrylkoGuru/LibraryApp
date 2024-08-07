@@ -9,4 +9,3 @@ D:\VisualStudio\Codes\C#\Library\obj\Debug\Library.exe
 D:\VisualStudio\Codes\C#\Library\obj\Debug\Library.pdb
 D:\VisualStudio\Codes\C#\Library\obj\Debug\Library.Form1.resources
 D:\VisualStudio\Codes\C#\Library\obj\Debug\Library.Form2.resources
-D:\VisualStudio\Codes\C#\Library\obj\Debug\Library.Form3.resources

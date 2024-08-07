@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Library
 {
+    [Serializable]
     public class Book
     {
         public string Title { get; set; }
@@ -13,14 +11,19 @@ namespace Library
         public int YearPublished { get; set; }
         public string ISBN { get; set; }
         public string Description { get; set; }
+        public string ImagePath { get; set; }
 
-        public Book(string title, string author, int yearPublished, string isbn, string description)
+        // Пустий конструктор для десеріалізації
+        public Book() { }
+
+        public Book(string title, string author, int yearPublished, string isbn, string description, string imagePath)
         {
             Title = title;
             Author = author;
             YearPublished = yearPublished;
             ISBN = isbn;
             Description = description;
+            ImagePath = imagePath;
         }
     }
 }
