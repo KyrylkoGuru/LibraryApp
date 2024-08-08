@@ -86,6 +86,7 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "Очистити форму";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -138,6 +139,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(321, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 16);
@@ -149,6 +151,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(321, 85);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 16);
@@ -159,6 +162,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(321, 125);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 16);
@@ -169,16 +173,18 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(321, 166);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 16);
+            this.label4.Size = new System.Drawing.Size(41, 16);
             this.label4.TabIndex = 13;
-            this.label4.Text = "ISBM:";
+            this.label4.Text = "ISBN:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(321, 217);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(109, 16);

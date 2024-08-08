@@ -231,8 +231,10 @@ namespace Library
         {
             return books.Where(b => b.Title.ToLower().Contains(query) ||
                                     b.Author.ToLower().Contains(query) ||
-                                    b.YearPublished.ToString().Contains(query)).ToList();
+                                    b.YearPublished.ToString().Contains(query) ||
+                                    b.ISBN.ToString().Contains(query)).ToList();
         }
+
 
         public List<Book> GetAllBooks()
         {
